@@ -6,7 +6,7 @@ body {
 	margin: 0;
 	padding: 0;
 	color: #221D23;
-	font: 1em/1.2 "TimesNew Roman", Georgia, serif;
+	font-family: 'Balsamiq Sans', cursive;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -17,7 +17,7 @@ h1,h2,h3,h4,h5,h6 {
 
 #cabecera {
 	background-color: #9FBDD0;
-	padding: 15px;
+	padding: 20px;
 	color: #221D23;
 	display: grid;
 	grid-template-columns: 30% auto;
@@ -26,11 +26,12 @@ h1,h2,h3,h4,h5,h6 {
 .logo {
 	float: left;
 	padding: 0 20px;
+	width: 190px
 }
 
 #imagenlogo {
-	width:  190px;
-	height: 150px;
+	max-width:  190px;
+	max-height: 150px;
 }
 
 #titulo-cab {
@@ -64,9 +65,16 @@ h1,h2,h3,h4,h5,h6 {
 #adicional {
 	background-color: #ADC7D7;
 	float: left;
-	padding: 0 20px;
+	padding: 20px;
 }
-
+/* Esta es la sección para editar el estilo del div que contiene los eventos
+	- background-color seleccionar el color de fondo del div
+	- float a la izquierda para que este pegado a la información adicional
+	- padding para separar el contenido de los bordes
+	- display en grid para alinear los eventos en una tabla
+	- grid-template-colums con 3 auto para indicar que son 3 columnas de tamaño automático
+	- Los gaps están puestos para tener un espacio entre las casillas del grid
+*/
 #main {
 	background-color: #BEFF99;
 	float: left;
@@ -74,19 +82,63 @@ h1,h2,h3,h4,h5,h6 {
 	display: grid;
 	grid-template-columns: auto auto auto;
 	grid-column-gap: 10px;
-	grid-row-gap: 10px;
+	grid-row-gap:    10px;
 }
 
+/* Estilos para los eventos */
 .evento {
-	margin-left: 100px;
+	background-color: #CBFFAD;
+	margin-left: 50px;
 	margin-top:  10px;
+	text-align: center;
+	padding-top: 5px;
+/* Esta línea añade el efecto "polaroid" a los eventos*/
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+/* Aquí se añade el efecto de zoom out cuando pasamos el ratón
+	por encima de los eventos
+
+	:hover es un selector que se activa cuando pasamos el ratón
+	por encima del elemento.
+
+	Añadimos img después para que solo afecte a la imágen del evento
+	y no a toda la sección evento
+*/
+.evento:hover img{
+	-webkit-transform:scale(1.3);transform:scale(1.3);
+	transition:all .5s ease-in-out;
+}
+
+/* Para ajustar el tamaño de todas las imágener tenemos primero
+	unas reglas generales, como algunos de los iconos no son cuadrados
+	tienen sus propias reglas para ajustar su tamaño
+*/
 .evento img {
 	width: 150px;
 	height: 150px;
+	border-radius: 150px;
 }
 
+#dvdr {
+	width: 150px;
+	height: 112px;
+	border-radius: 0px;
+}
+
+#evdr {
+	width: 86.12px;
+	height: 150px;
+	border-radius: 0px;
+}
+
+#esc {
+	width: 114px;
+	height: 150px;
+	border-radius: 0px;
+}
+
+/* Estilo del pie de página*/
 .pie {
 	background-color: #9FBDD0;
 	text-align: center;

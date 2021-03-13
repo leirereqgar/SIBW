@@ -1,43 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
+	<!--Metadatos, título de la página y enlace al archivo css para estilo-->
 	<head>
 		<meta charset="utf-8">
-		<title>Page Title</title>
+		<title>Fiestas en la Manchuela</title>
+
+		<link rel="stylesheet" href="../css/portada.css">
+
+		<!--Tipografía alojada en google fonts-->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
 	</head>
 
 
 	<body>
-		<link rel="stylesheet" href="../css/header.css">
-
-		<div class="cabecera">
-			<div class="titulo-cab">
-				<header>
-					<h1 class="titulo">Page Title</h1>
-				</header>
+		<!--Cabecera-->
+		<div id="cabecera">
+			<div class="logo">
+				<img src="../img/logo.png" id="imagenlogo">
 			</div>
 
-			<div class="nav-bar">
-				<ul class="nav">
-					<div class="nav-item">
-						<li>Opción 1</li>
-					</div>
-					<div class="nav-item">
-						<li>Opción 2</li>
-					</div>
-					<div class="nav-item">
-						<li>Opción 3</li>
-					</div>
+			<div id="titulo-cab">
+				<h1>Fiestas en la Manchuela</h1>
+
+				<div id="menu">
+					<ul id="lista-menu">
+						<div class="item">
+							<li>Menú</li>
+						</div>
+						<div class="item">
+							<li>Sobre la zona</li>
+						</div>
+						<div class="item">
+							<li>Sobre nosotros</li>
+						</div>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!--Main de la página-->
+		<div id="cuerpo">
+			<div id="adicional">
+				<h2> Información adicional</h2>
+				<ul>
+					<li>Elemento 1</li>
+					<li>Elemento 2</li>
+					<li>Elemento 3</li>
 				</ul>
 			</div>
+
+			<!--Aquí van todos los eventos-->
+			<div id="main">
+				<!--Primera fila de eventos-->
+				<!--Este evento tiene un identificador especial porque la foto no es cuadrada-->
+				<div class="evento">
+					<img src="../img/omega.png" id="dvdr">
+					<h3>Día Joven Vara de Rey</h3>
+				</div>
+				<div class="evento">
+					<img src="../img/blue.jpg">
+					<h3>Blue Summer Festival</h3>
+				</div>
+				<div class="evento">
+					<img src="../img/evdr.png" id="evdr">
+					<h3>Fiestas Patronales de Vara de Rey</h3>
+				</div>
+
+				<!--Segunda fila de eventos-->
+				<div class="evento">
+					<img src="../img/marmota.png">
+					<h3>Noche de la marmota</h3>
+				</div>
+				<div class="evento">
+					<img src="../img/esi.png">
+					<h3>Fiestas patronales de Sisante</h3>
+				</div>
+				<div class="evento">
+					<img src="../img/star.jpg">
+					<h3>Evento X</h3>
+				</div>
+
+				<!--Tercera y última fila de eventos-->
+				<div class="evento">
+					<img src="../img/esc.png" id="esc">
+					<h3>Fiestas de San Clemente</h3>
+				</div>
+				<div class="evento">
+					<img src="../img/star.jpg">
+					<h3>Evento X</h3>
+				</div>
+				<div class="evento">
+					<img src="../img/star.jpg">
+					<h3>Evento X</h3>
+				</div>
+			</div>
 		</div>
 
-		<div class="caja-izq">
-			<p>Esto a la izquierda</p>
+		<!--Pie de página-->
+		<div class="pie">
+			<p>Leire Requena Garcia </p>
 		</div>
 
-		<div class="caja-central">
-			<p>Esto va en el centro</p>
-		</div>
+
 
 	</body>
 
