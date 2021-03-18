@@ -1,0 +1,200 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #AEC6D6;
+	color: #413843;
+	font-family: 'Balsamiq Sans', cursive;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin: 0 0 .5em;
+	font-weight: 500;
+	line-height: 1.1;
+}
+
+#cabecera {
+	background-color: #C8D9E4;
+	padding: 20px;
+	color: #221D23;
+	display: grid;
+	grid-template-columns: 30% 70%;
+
+}
+
+.logo {
+	float: left;
+	padding: 20px;
+	width: 190px
+}
+
+#imagenlogo {
+	width: 100%;
+	height: auto;
+	display: block;
+	max-width:  200px;
+	max-height: 160px;
+}
+
+#titulo-cab {
+	float: left;
+	margin: 30px;
+	text-align: left;
+	font-size: 25px;
+}
+
+#menu {
+	font-size: 15px;
+	background-color: #ECEED3;
+}
+
+#lista-menu {
+	list-style: none;
+}
+
+.item {
+	display: inline-block;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.item a {
+	color: inherit;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	padding: 14px 16px;
+	transition: background .25s;
+	transition-timing-function: linear;
+}
+
+.item a:hover {
+	background-color: #e3e3e3;
+}
+
+#cuerpo {
+	overflow: auto;
+	display: grid;
+	grid-template-columns: 15% 85%;
+}
+
+#adicional {
+	background-color: #C8D9E4;
+	float: left;
+	padding: 20px;
+	border-style: solid solid solid none;
+	border-width: 0.05em;
+	border-color: #AEC6D6;
+
+	font-size: 1vw;
+	text-align: left;
+}
+
+
+#main {
+	background-color: #ECEED3;
+	margin: 2em;
+	border-radius: 1em;
+}
+
+#titulos {
+	padding: 20px;
+}
+
+#descripcion {
+	align-self: center;
+	position: relative;
+	margin: 20px;
+}
+
+.imagenes {
+	float:right;
+}
+
+#espuma {
+	width: 200px;
+	height: 200px;
+	border-radius: 1em;
+}
+
+#plaza {
+	width: 250px;
+	height: 171px;
+	border-radius: 1em;
+}
+
+.pie {
+	position: relative;
+	background-color: #9FBDD0;
+	text-align: center;
+	padding: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+	#cabecera {
+		background-color: #C8D9E4;
+		padding: 20px;
+		color: #221D23;
+		display: grid;
+		grid-template-columns: 30% 70%;
+	}
+
+	.logo {
+		float: left;
+		padding: 20px;
+		width: 190px
+	}
+
+	#imagenlogo {
+		width: 100%;
+		height: auto;
+		display: block;
+		max-width:  200px;
+		max-height: 160px;
+	}
+
+	#titulo-cab {
+		float: left;
+		margin: 30px;
+		text-align: left;
+		font-size: 25px;
+	}
+
+	#menu {
+		font-size: 1em;
+		background-color: #ECEED3;
+	}
+
+	#lista-menu {
+		list-style: none;
+	}
+
+	.item {
+		display: inline-block;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+
+	.item a {
+		color: inherit;
+		display: block;
+		text-align: center;
+		text-decoration: none;
+		padding: 14px 16px;
+		transition: background .25s;
+		transition-timing-function: linear;
+	}
+
+	#cuerpo {
+		overflow: auto;
+		display: grid;
+		grid-template-columns: 100%;
+	}
+
+	#adicional {
+		display: none;
+	}
+}
