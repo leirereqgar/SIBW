@@ -6,7 +6,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: #AEC6D6;
-	color: #413843;
+	color: black;
 	font-family: 'Balsamiq Sans', cursive;
 }
 
@@ -18,37 +18,28 @@ h1,h2,h3,h4,h5,h6 {
 
 #cabecera {
 	background-color: #C8D9E4;
-	padding: 20px;
-	color: #221D23;
 	display: grid;
-	grid-template-columns: 30% 70%;
-
+	grid-template-columns: 100%;
 }
 
 .logo {
 	float: left;
 	padding: 20px;
-	width: 190px
+	width: 300px
 }
 
 #imagenlogo {
 	width: 100%;
 	height: auto;
 	display: block;
-	max-width:  200px;
-	max-height: 160px;
-}
-
-#titulo-cab {
-	float: left;
-	margin: 30px;
-	text-align: left;
-	font-size: 25px;
+	max-width:  300px;
+	max-height: 260px;
 }
 
 #menu {
 	font-size: 15px;
 	background-color: #ECEED3;
+	margin: 0;
 }
 
 #lista-menu {
@@ -57,8 +48,6 @@ h1,h2,h3,h4,h5,h6 {
 
 .item {
 	display: inline-block;
-	margin-left: 5px;
-	margin-right: 5px;
 }
 
 .item a {
@@ -84,12 +73,10 @@ h1,h2,h3,h4,h5,h6 {
 #adicional {
 	background-color: #C8D9E4;
 	float: left;
-	padding: 20px;
+	padding: 1em;
 	border-style: solid solid solid none;
 	border-width: 0.05em;
 	border-color: #AEC6D6;
-
-	font-size: 1vw;
 	text-align: left;
 }
 /* Esta es la sección para editar el estilo del div que contiene los eventos
@@ -103,21 +90,19 @@ h1,h2,h3,h4,h5,h6 {
 #main {
 	background-color: #C8D9E4;
 	float: left;
-	margin: 2em;
+	margin: 1em;
 	border-radius: 1em;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 	grid-template-rows: minmax(100px, auto);
 	position: relative;
-	margin: 40px;
 	grid-auto-flow: dense;
-	grid-gap: 5px;
 }
 
 /* Estilos para los eventos */
 .evento {
 	background-color: #ECEED3;
-	margin: 25px;
+	margin: 2em;
 	padding: 5px;
 	height: 13em;
 	display: grid;
@@ -167,7 +152,7 @@ h1,h2,h3,h4,h5,h6 {
 /* Estilo del pie de página*/
 .pie {
 	position: relative;
-	background-color: #9FBDD0;
+	background-color: #C8D9E4;
 	text-align: center;
 	padding: 10px;
 }
@@ -182,10 +167,9 @@ h1,h2,h3,h4,h5,h6 {
 
 	#cabecera {
 		background-color: #C8D9E4;
-		padding: 20px;
 		color: #221D23;
 		display: grid;
-		grid-template-columns: 30% 70%;
+		grid-template-columns: 100%;
 	}
 
 	.logo {
@@ -200,13 +184,6 @@ h1,h2,h3,h4,h5,h6 {
 		display: block;
 		max-width:  200px;
 		max-height: 160px;
-	}
-
-	#titulo-cab {
-		float: left;
-		margin: 30px;
-		text-align: left;
-		font-size: 25px;
 	}
 
 	#menu {
@@ -233,14 +210,6 @@ h1,h2,h3,h4,h5,h6 {
 		display: none;
 	}
 
-	/* Esta es la sección para editar el estilo del div que contiene los eventos
-		- background-color seleccionar el color de fondo del div
-		- float a la izquierda para que este pegado a la información adicional
-		- padding para separar el contenido de los bordes
-		- display en grid para alinear los eventos en una tabla
-		- grid-template-colums con 3 auto para indicar que son 3 columnas de tamaño automático
-		- Los gaps están puestos para tener un espacio entre las casillas del grid
-	*/
 	#main {
 		background-color: #C8D9E4;
 		float: left;
@@ -254,7 +223,7 @@ h1,h2,h3,h4,h5,h6 {
 		background-color: #ECEED3;
 		margin: 25px;
 		padding: 5px;
-		height: 13em;
+		height: 10em;
 		display: grid;
 		place-items: center;
 		text-align: center;
