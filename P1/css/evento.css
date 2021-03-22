@@ -6,7 +6,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: #AEC6D6;
-	color: #413843;
+	color: black;
 	font-family: 'Balsamiq Sans', cursive;
 }
 
@@ -18,32 +18,22 @@ h1,h2,h3,h4,h5,h6 {
 
 #cabecera {
 	background-color: #C8D9E4;
-	padding: 20px;
-	color: #221D23;
 	display: grid;
-	grid-template-columns: 30% 70%;
-
+	grid-template-columns: 100%;
 }
 
 .logo {
 	float: left;
 	padding: 20px;
-	width: 190px
+	width: 300px
 }
 
 #imagenlogo {
 	width: 100%;
 	height: auto;
 	display: block;
-	max-width:  200px;
-	max-height: 160px;
-}
-
-#titulo-cab {
-	float: left;
-	margin: 30px;
-	text-align: left;
-	font-size: 25px;
+	max-width:  300px;
+	max-height: 260px;
 }
 
 #menu {
@@ -88,11 +78,8 @@ h1,h2,h3,h4,h5,h6 {
 	border-style: solid solid solid none;
 	border-width: 0.05em;
 	border-color: #AEC6D6;
-
-	font-size: 1vw;
 	text-align: left;
 }
-
 
 #main {
 	background-color: #ECEED3;
@@ -102,6 +89,12 @@ h1,h2,h3,h4,h5,h6 {
 
 #titulos {
 	padding: 20px;
+}
+
+#titulos img {
+	float: right;
+	width: 3em;
+	height: 3em;
 }
 
 #descripcion {
@@ -128,7 +121,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .pie {
 	position: relative;
-	background-color: #9FBDD0;
+	background-color: #C8D9E4;
 	text-align: center;
 	padding: 10px;
 }
@@ -136,31 +129,21 @@ h1,h2,h3,h4,h5,h6 {
 @media only screen and (max-width: 800px) {
 	#cabecera {
 		background-color: #C8D9E4;
-		padding: 20px;
-		color: #221D23;
 		display: grid;
-		grid-template-columns: 30% 70%;
+		grid-template-columns: 100%;
 	}
 
 	.logo {
 		float: left;
-		padding: 20px;
-		width: 190px
+		width: 300px
 	}
 
 	#imagenlogo {
 		width: 100%;
 		height: auto;
 		display: block;
-		max-width:  200px;
-		max-height: 160px;
-	}
-
-	#titulo-cab {
-		float: left;
-		margin: 30px;
-		text-align: left;
-		font-size: 25px;
+		max-width:  300px;
+		max-height: 260px;
 	}
 
 	#menu {
