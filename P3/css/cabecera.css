@@ -1,0 +1,47 @@
+#cabecera {
+	background-color: #C8D9E4;
+	display: grid;
+	grid-template-columns: 100%;
+}
+
+.logo {
+	float: left;
+	padding: 20px;
+	width: 250px
+}
+
+#imagenlogo {
+	width: 100%;
+	height: auto;
+	display: block;
+	max-width:  100px;
+	max-height: 260px;
+}
+
+#menu {
+	font-size: 15px;
+	background-color: #ECEED3;
+	margin: 0;
+}
+
+#lista-menu {
+	list-style: none;
+}
+
+.item {
+	display: inline-block;
+}
+
+.item a {
+	color: inherit;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	padding: 14px 16px;
+	transition: background .25s;
+	transition-timing-function: linear;
+}
+
+.item a:hover {
+	background-color: #e3e3e3;
+}

@@ -1,0 +1,63 @@
+{% extends "padre.html" %}
+
+	{% block mensaje %}
+		Página Evento
+	{% endblock %}
+
+	{% block stylesheets %}
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/p_evento.css">
+	{% endblock %}
+
+	{% block central %}
+	<div id="infoEvento">
+		<div id="titulos">
+			<h2>{{ nombre }}<a href="./evento_imprimir.php"><img src="../img/imprimir.svg"></a></h2>
+			<h3>{{ organizador }}</h3>
+			<h4>{{ fecha }}</h4>
+
+			<div id="descripcion">
+				<div class="imagenes">
+					<img src="../img/espuma.jpg" id="espuma"><br>
+					<img src="../img/plaza.jpg" id="plaza">
+				</div>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+					hendrerit vel felis vitae faucibus. Etiam venenatis finibus sapien,
+					quis viverra ipsum interdum lacinia. Sed suscipit nulla tempus bibendum accumsan. In luctus quam et sem interdum rutrum. Donec non libero tincidunt, mollis ligula et, elementum lectus. Quisque maximus at dui ac pulvinar. Praesent condimentum sed est ac tincidunt. Nulla in luctus enim. Morbi at imperdiet risus. Phasellus egestas consectetur purus, eu blandit massa pretium vitae. Etiam quis erat consectetur felis aliquam tincidunt. Duis viverra feugiat sapien vitae finibus. Etiam fringilla ante eget neque maximus, quis aliquam enim sodales. Ut
+					odio mauris, vehicula eu pharetra mattis, pellentesque nec lacus.
+					Nunc efficitur purus elit, ut dictum purus venenatis ut. Morbi a
+					iaculis tortor, sed congue justo.
+					<br>
+					Nunc ac tellus ac metus vehicula tincidunt. Fusce nec ipsum mattis,
+					lacinia magna vitae, tempus augue. Proin tristique, ipsum id vulputate
+					porttitor, mi massa condimentum urna, non molestie massa enim quis
+					neque. Praesent in metus magna. Cras eget lobortis nisl. Nullam et
+					leo vitae metus porttitor pretium a sed lectus. Donec eros nulla,
+					rutrum ac eros et, vulputate tincidunt libero. Duis et magna vel
+					ipsum porttitor euismod id sit amet elit. Morbi viverra sem vel
+					quam tempor, sit amet semper sem cursus. Nullam tincidunt lectus
+					in est fermentum rhoncus. Nunc eu magna mauris. Fusce lobortis
+					congue massa, sit amet congue ante tincidunt ut. Donec ut lobortis
+					augue. Phasellus vel volutpat odio. In tristique turpis laoreet mauris
+					semper egestas. Fusce feugiat ac justo ac blandit.
+					<br>
+					Maecenas elementum felis ut augue hendrerit, ut porta urna egestas.
+					Donec eget congue nulla. Nulla auctor pellentesque tortor feugiat
+					dignissim. Ut vel augue non urna maximus venenatis. Fusce porttitor
+					ullamcorper nisi, id pharetra est varius a. Fusce tempor tellus vitae
+					justo viverra pretium. Aenean a vehicula nisi, vel congue eros. In
+					aliquet, leo at bibendum malesuada, dolor leo maximus felis, sit amet
+					posuere dolor massa nec metus. Integer euismod dui felis, non
+					sollicitudin enim volutpat nec. Duis et volutpat augue. Integer
+					quis fringilla turpis, eget fermentum erat. Suspendisse convallis
+					sem sed pellentesque varius. Etiam eu metus fermentum, ullamcorper
+					justo nec, iaculis elit. Vivamus sit amet nisl sit amet ipsum ultrices
+					placerat.
+				</p>
+			</div>
+		</div>
+	</div>
+
+
+	{% endblock %}

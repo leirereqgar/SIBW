@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>albedr.io: {% block mensaje %}{% endblock %}</title>
+		<link rel="stylesheet" href="css/cabecera.css">
+		{% block stylesheets %}
+		{% endblock %}
+
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+
+		<link rel="icon" href="../img/favicon.png">
+	</head>
+
+	<body>
+		<div id="cabecera">
+			<div class="logo">
+				<img src="img/logo.png" id="imagenlogo">
+			</div>
+			<div id="menu">
+				<ul id="lista-menu">
+					<div class="item">
+						<li><a href="index.php">Página principal</a></li>
+					</div>
+					<div class="item">
+						<li><a href="">Sobre la zona</a></li>
+					</div>
+					<div class="item">
+						<li><a href="">Sobre nosotros</a></li>
+					</div>
+				</ul>
+			</div>
+		</div>
+
+		<div id=cuerpo>
+			<div id="adicional">
+				<h2>Redes sociales</h2>
+				<ul>
+					<li>Twitter</li>
+					<li>Instagram</li>
+					<li>Facebook</li>
+				</ul>
+
+				<!--Aquí van todos los eventos-->
+			</div>
+
+
+			{% block central %}
+			<div id="principal">
+			<p>Parte central de la plantilla</p>
+			</div>
+			{% endblock %}
+
+		</div>
+
+		<div id="pie">
+			<p>&copy; Leire Requena Garcia</p>
+		</div>
+	</body>
+</html>
