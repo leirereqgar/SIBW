@@ -1,13 +1,17 @@
 <?php
 	require_once "./vendor/autoload.php";
+	include("controladorBD.php");
 
 	$loader = new \Twig\Loader\FilesystemLoader('templates');
 	$twig = new \Twig\Environment($loader);
 
-	$nombreEvento = "Nombre por defecto";
-	$fechaEvento = "Fecha por defecto";
+	if (isset($_GET['ev'])) {
+		$idEv = $_GET['ev'];
+	} else {
+		$idEv = -1;
+	}
 
+	$evento = getEvento($idEv);
 
-
-	echo $twig->render('evento_imprimir.html', ['nombre' => $nombreEvento, 'fecha' => $fechaEvento]);
+	echo $twig->render('evento_imprimir.html', ['evento' => $evento,'id_evento' => $idEv]);
 ?>

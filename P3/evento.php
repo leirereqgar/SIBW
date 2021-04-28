@@ -13,5 +13,5 @@
 
 	$evento = getEvento($idEv);
 
-	echo $twig->render('evento.html', ['evento' => $evento]);
+	echo $twig->render('evento.html', ['evento' => $evento,'id_evento' => $idEv]);
 ?>

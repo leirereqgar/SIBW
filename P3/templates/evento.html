@@ -21,7 +21,7 @@
 	{% block central %}
 	<div id="infoEvento">
 		<div id="titulos">
-			<h2>{{ evento ['nombre'] }}<a href="./evento_imprimir.php"><img src="../img/imprimir.svg"></a></h2>
+			<h2>{{ evento ['nombre'] }}<a href="./evento_imprimir.php?ev={{id_evento}}"><img src="../img/imprimir.svg"></a></h2>
 			<h3>{{ evento ['organizacion'] }}</h3>
 			<h4>{{ evento ['fecha'] }}</h4>
 

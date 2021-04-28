@@ -12,17 +12,15 @@
 
 	{% block central %}
 	<div id="principal">
+
+		{% for i in eventos %}
 		<div class="evento">
-			<a href="evento.php?ev=1">
-				<img src="../img/omega.png">
-			<h3>Día Joven Vara de Rey</h3>
+			<a href="evento.php?ev={{i['id']}}">
+				<img src="{{i['logo']}}">
+			<h3>{{i['nombre']}}</h3>
 			</a>
 		</div>
-		<div class="evento">
-			<a href="evento.php?ev=2">
-				<img src="../img/evdr.png">
-				<h3>Fiestas Patronales de Vara de Rey</h3>
-			</a>
-		</div>
+		{%endfor%}
+
 	</div>
 	{% endblock %}
