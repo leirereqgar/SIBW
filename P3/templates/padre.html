@@ -8,7 +8,7 @@
 		{% endblock %}
 
 		<link rel="preconnect" href="https://fonts.gstatic.com">
-		<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
 
 		<link rel="icon" href="../img/favicon.png">
 	</head>
@@ -29,6 +29,9 @@
 					<div class="item">
 						<li><a href="">Sobre nosotros</a></li>
 					</div>
+					{% block items_adicionales %}
+					En algunas páginas hay que añadir botones
+					{% endblock %}
 				</ul>
 			</div>
 		</div>
@@ -41,8 +44,6 @@
 					<li>Instagram</li>
 					<li>Facebook</li>
 				</ul>
-
-				<!--Aquí van todos los eventos-->
 			</div>
 
 

@@ -7,7 +7,7 @@ body {
 	padding: 0;
 	background-color: #AEC6D6;
 	color: black;
-	font-family: 'Balsamiq Sans', cursive;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -19,7 +19,7 @@ h1,h2,h3,h4,h5,h6 {
 #cuerpo {
 	overflow: auto;
 	display: grid;
-	grid-template-columns: 15% 85%;
+	grid-template-columns: 20% 70%;
 }
 
 #adicional {

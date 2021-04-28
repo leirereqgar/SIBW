@@ -7,12 +7,21 @@
 	<link rel="stylesheet" href="css/evento.css">
 	{% endblock %}
 
+	{% block items_adicionales %}
+	{% endblock %}
+
 	{% block central %}
 	<div id="principal">
 		<div class="evento">
-			<a href="evento.php">
+			<a href="evento.php?ev=1">
 				<img src="../img/omega.png">
 			<h3>Día Joven Vara de Rey</h3>
+			</a>
+		</div>
+		<div class="evento">
+			<a href="evento.php?ev=2">
+				<img src="../img/evdr.png">
+				<h3>Fiestas Patronales de Vara de Rey</h3>
 			</a>
 		</div>
 	</div>

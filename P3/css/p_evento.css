@@ -10,8 +10,10 @@
 
 #titulos img {
 	float: right;
-	width: 3em;
-	height: 3em;
+}
+
+.imagenes {
+	float:right;
 }
 
 #descripcion {
@@ -20,12 +22,8 @@
 	margin: 20px;
 }
 
-.imagenes {
-	float:right;
-}
-
 #espuma {
-	max-width: 200px;
+	max-width: 500px;
 	height: 200px;
 	border-radius: 1em;
 }
