@@ -16,20 +16,17 @@ body {
 }
 
 .logo {
-	padding: 20px;
+	float:right;
 	width: 190px
 }
 
 #imagenlogo {
-	width: 100%;
 	height: auto;
-	max-width:  200px;
-	max-height: 160px;
+	max-width:  100px;
+	max-height: 100px;
 }
 
-#principal {
-	margin: 2em;
-	border-radius: 1em;
+#infoEvento {
 	width: 900px;
 	align-self: center;
 }

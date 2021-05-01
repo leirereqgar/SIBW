@@ -1,6 +1,6 @@
 <?php
 	require_once "./vendor/autoload.php";
-	include("controladorBD.php");
+	include("controladoresBD/controladorBD.php");
 
 	$loader = new \Twig\Loader\FilesystemLoader('templates');
 	$twig = new \Twig\Environment($loader);
@@ -12,6 +12,8 @@
 	}
 
 	$evento = getEvento($idEv);
+	$comentarios = getComentarios($idEv);
 
-	echo $twig->render('evento.html', ['evento' => $evento,'id_evento' => $idEv]);
+	echo $twig->render('evento.html', ['id_evento' => $idEv, 'evento' => $evento,
+	                                   'comentarios' => $comentarios]);
 ?>
