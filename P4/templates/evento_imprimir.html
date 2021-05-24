@@ -1,0 +1,34 @@
+{% extends "padre.html" %}
+
+	{% block mensaje %}
+		{{ evento ['nombre'] }}
+	{% endblock %}
+
+	{% block stylesheets %}
+	<link rel="stylesheet" href="css/p_evento_imprimir.css">
+	{% endblock %}
+
+	{% block items_adicionales %}
+	<div id="item_menu">
+		<button type="button" name="boton_menu" id="boton_abrir">
+			<img src="../img/menu.svg">
+		</button>
+	</div>
+	{% endblock %}
+
+	{% block central %}
+	<div id="infoEvento">
+		<div id="titulos">
+			<h2>{{ evento ['nombre'] }}<img src="img/logo.png" class="logo" id="imagenlogo"></h2>
+			<h3>{{ evento ['organizacion'] }}</h3>
+			<h4>{{ evento ['fecha'] }}</h4>
+		</div>
+		<div id="descripcion">
+			<div class="imagenes">
+				<img src="{{evento['imagen1']}}" id="espuma"><br>
+				<img src="{{evento['imagen2']}}" id="plaza">
+			</div>
+			<p>{{ evento ['descripcion'] }}</p>
+		</div>
+	</div>
+	{% endblock %}

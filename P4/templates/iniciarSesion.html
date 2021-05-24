@@ -1,0 +1,19 @@
+{% extends "usuarios.html" %}
+
+{% block mensaje %}
+	Iniciar sesión
+{% endblock %}
+
+
+{% block form %}
+	<form action="iniciarSesion.php" id="iniciarSesion">
+		<h3>Usuario</h3>
+			<input type="text" name="nickname" value="{{valores['nickname']}}">
+		<h3>Contraseña</h3>
+			<input type="password" id="pass" name="pass" value="">
+			{% if valores['intento'] == true %}
+				<p id="error"> Datos introducidos incorrectos</p>
+			{% endif %}
+		<button type="submit">Confirmar</button>
+	</form>
+{% endblock %}

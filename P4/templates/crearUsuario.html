@@ -1,0 +1,25 @@
+{% extends "usuarios.html" %}
+
+{% block mensaje %}
+	Registrarse
+{% endblock %}
+
+
+{% block form %}
+	<form id="nuevoUsuario" action="crearCuenta.php" method="post">
+		<h3>Usuario</h3>
+			<input type="text" name="nickname" value="{{valores['nickname']}}">
+		<h3>Nombre</h3>
+			<input type="text" name="nombre" value="{{valores['nombre']}}">
+		<h3>Apellidos</h3>
+			<input type="text" name="apellidos" value="{{valores['apellidos']}}">
+		<h3>Correo</h3>
+			<input type="text" name="correo" value="{{valores['correo']}}">
+		<h3>Contraseña</h3>
+			<input type="password" id="pass" name="pass" value="">
+			{% if valores['intento'] == true %}
+				<p id="error"> Datos introducidos incorrectos</p>
+			{% endif %}
+		<button type="submit">Confirmar</button>
+	</form>
+{% endblock %}

@@ -1,0 +1,68 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #AEC6D6;
+	color: black;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin: 0 0 .5em;
+	font-weight: 500;
+	line-height: 1.1;
+}
+
+#cuerpo {
+	overflow: auto;
+	display: grid;
+	grid-template-columns: 20% 70%;
+}
+
+#adicional {
+	background-color: #C8D9E4;
+	float: left;
+	padding: 1em;
+	border-style: solid solid solid none;
+	border-width: 0.05em;
+	border-color: #AEC6D6;
+	text-align: left;
+}
+
+#cuentas {
+	display: grid;
+	grid-template-columns: 100%;
+}
+
+#cuentas a {
+	color: inherit;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+}
+
+#cuentas button {
+	background-color: #ECEED3;
+	border: none;
+	padding: 10px;
+	margin: 5px;
+	display: inline-block;
+	font-size: 16px;
+	font-family: 'Source Sans Pro', sans-serif;
+	transition-duration: 0.4s;
+}
+
+#cuentas button:hover {
+	background-color: #AEC6D6;
+}
+
+/* Estilo del pie de página*/
+#pie {
+	position: relative;
+	background-color: #C8D9E4;
+	text-align: center;
+	padding: 10px;
+}

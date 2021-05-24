@@ -1,0 +1,82 @@
+#item_menu {
+	float: right;
+	margin-right: 3em;
+}
+
+#boton_abrir {
+	padding: 1px;
+	background-color: transparent;
+	border: none;
+	border-radius: 2px;
+	width: 3em;
+	height: 3em;
+	transition-duration: 0.4s;
+}
+
+#boton_abrir img {
+	width: 3em;
+	height: 3em;
+}
+
+#boton_abrir:hover {
+	background-color: grey;
+}
+
+#contenedor_menu {
+	height: 100%; /* 100% Full-height */
+	width: 0; /* 0 width - change this with JavaScript */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Stay on top */
+	top: 0; /* Stay at the top */
+	right: 0;
+	background-color: #AEC6D6; /* Black*/
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding-top: 10px; /* Place content 60px from the top */
+	transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+	display: flex;
+	flex-direction: column;
+}
+
+#boton_cerrar {
+	margin-right: 5px;
+	float: right;
+	background-color: transparent;
+	border: none;
+	border-radius: 2px;
+	width: 3em;
+	height: 3em;
+}
+
+#boton_cerrar:hover {
+	background-color: grey;
+}
+
+.comentario {
+	background-color: #C8D9E4;
+	margin-bottom: 5px;
+	padding: 5px;
+}
+
+#formulario_comentarios {
+	background-color: #C8D9E4;
+	position: fixed;
+	padding: 5px;
+	bottom: 50px;
+	overflow-x: auto;
+}
+
+#formulario_comentarios form p {
+	padding-left: 5px;
+}
+
+#nombre {
+	width: 30%;
+}
+
+#email {
+	width: 30%;
+}
+
+#contenido {
+	width: 100%;
+}

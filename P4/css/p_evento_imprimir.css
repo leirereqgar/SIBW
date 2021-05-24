@@ -1,0 +1,62 @@
+body {
+	margin: 0;
+	padding: 0;
+	color: #413843;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#cabecera{
+	display: none;
+}
+
+#adicional {
+	display: none;
+}
+
+.logo {
+	float:right;
+	width: 190px
+}
+
+#imagenlogo {
+	height: auto;
+	max-width:  100px;
+	max-height: 100px;
+}
+
+#infoEvento {
+	width: 900px;
+	align-self: center;
+}
+
+#titulos {
+	padding: 20px;
+}
+
+#descripcion {
+	align-self: center;
+	position: relative;
+	margin: 20px;
+}
+
+.imagenes {
+	float:right;
+}
+
+#espuma {
+	width: 200px;
+	height: 200px;
+	border-radius: 1em;
+}
+
+#plaza {
+	width: 250px;
+	height: 171px;
+	border-radius: 1em;
+}
+
+#pie {
+	display: none;
+}

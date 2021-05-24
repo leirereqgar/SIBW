@@ -1,0 +1,36 @@
+#infoEvento {
+	background-color: #ECEED3;
+	margin: 2em;
+	border-radius: 1em;
+}
+
+#titulos {
+	padding: 20px;
+}
+
+#titulos img {
+	float: right;
+}
+
+.imagenes {
+	float:right;
+	padding-bottom: 10px;
+}
+
+#descripcion {
+	align-self: center;
+	position: relative;
+	margin: 20px;
+}
+
+#espuma {
+	max-width: 500px;
+	height: 200px;
+	border-radius: 1em;
+}
+
+#plaza {
+	width: 250px;
+	height: 171px;
+	border-radius: 1em;
+}

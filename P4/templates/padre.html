@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>albedr.io: {% block mensaje %}{% endblock %}</title>
+		<link rel="stylesheet" href="css/cabecera.css">
+		{% block stylesheets %}
+		{% endblock %}
+
+		{% block scripts %}
+		{% endblock %}
+
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+
+		<link rel="icon" href="../img/favicon.png">
+	</head>
+
+	<body>
+		<div id="cabecera">
+			<div class="logo">
+				<img src="img/logo.png" id="imagenlogo">
+			</div>
+			<div id="menu">
+				<ul id="lista-menu">
+					<div class="item">
+						<li><a href="index.php">Página principal</a></li>
+					</div>
+					<div class="item">
+						<li><a href="">Sobre la zona</a></li>
+					</div>
+					<div class="item">
+						<li><a href="">Sobre nosotros</a></li>
+					</div>
+					{% block items_adicionales %}
+					En algunas páginas hay que añadir botones
+					{% endblock %}
+				</ul>
+			</div>
+		</div>
+
+		<div id=cuerpo>
+			<div id="adicional">
+				<div id="cuentas">
+					{% block cuentas %}
+					{% endblock %}
+				</div>
+			</div>
+
+
+			{% block central %}
+			<div id="principal">
+			<p>Parte central de la plantilla</p>
+			</div>
+			{% endblock %}
+
+		</div>
+
+		<div id="pie">
+			<p>&copy; Leire Requena Garcia</p>
+		</div>
+	</body>
+</html>
