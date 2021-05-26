@@ -1,10 +1,10 @@
 <?php
-	require_once("controladorBD.php");
+	require_once("ControladorBD.php");
 
 	class EventosBD {
 
 		static function getEvento($idEv) {
-			$mysqli = controladorBD::conectar();
+			$mysqli = ControladorBD::conectar();
 
 			$evento = array('nombre' => 'XXX', 'organizacion' => 'YYY',
 			                'fecha'  => 'XXXX-XX-XX', 'descripcion' => 'Por defecto',
@@ -30,7 +30,7 @@
 		}
 
 		static function getAllEventos() {
-			$mysqli = controladorBD::conectar();
+			$mysqli = ControladorBD::conectar();
 
 			$result = array();
 			$indice = 0;

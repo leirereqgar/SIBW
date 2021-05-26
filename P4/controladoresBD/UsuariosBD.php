@@ -1,13 +1,13 @@
 <?php
 	ini_set('display_errors', 1);
-	require_once("controladorBD.php");
+	require_once("ControladorBD.php");
 
 	class UsuariosBD {
 		static function loginUsuario($nickname, $pass) {
-			$mysqli = controladorBD::conectar();
+			$mysqli = ControladorBD::conectar();
 			$id = "";
 
-			$res = $mysqli->query("SELECT id_user, nickname, password FROM usuarios WHERE nickname=". $nickname.")");
+			$res = $mysqli->query("SELECT * FROM usuarios WHERE nickname='". $nickname."'");
 
 			if($res->num_rows > 0) {
 				$row = $res->fetch_assoc();
@@ -19,22 +19,22 @@
 			return $id;
 		}
 
-		static function crearNuevoUsuario ($nickname, $nombre, $apellidos,  $pass, $mail) {
-			$mysqli = controladorBD::conectar();
+		static function crearNuevoUsuario ($datos, $pass) {
+			$mysqli = ControladorBD::conectar();
 
-			$mysqli->query("INSERT INTO `usuarios` (`id_user`, `nickname`, `nombre`, `apellidos`, `password`, `correo`, `tipo`) ".
-			               "VALUES (NULL, '" . $nickname . "','" . $nombre . "', '" . $apellidos .
-								"', '" . $pass . "', '" . $mail . "', 'registrado') ");
+			$mysqli->query("INSERT INTO usuarios (nickname, nombre, apellidos, password, correo, tipo) ".
+			               "VALUES ('" . $datos['nickname'] . "','" . $datos['nombre'] . "', '" . $datos['apellidos'] .
+								"', '" . $pass . "', '" . $datos['correo'] . "', 'registrado') ");
 
-			return UsuariosBD::loginUsuario($nickname, $pass);
+			return UsuariosBD::loginUsuario($datos['nickname'], $pass);
 		}
 
 		static function verificarNickname($nickname) {
-			$mysqli = controladorBD::conectar();
+			$mysqli = ControladorBD::conectar();
 
 			$res = $mysqli->query("SELECT * FROM usuarios WHERE nickname='" . $nickname . "'");
 
-			return ($res->num_rows > 0);
+			return ($res->num_rows == 0);
 		}
 
 		static function verificarCorreo($correo) {
@@ -42,7 +42,7 @@
 			$es_correo = preg_match('/^.+@.+\..+$/', $correo);
 
 			if($es_correo) {
-				$mysqli = controladorBD::conectar();
+				$mysqli = ControladorBD::conectar();
 				$res = $mysqli->query("SELECT * FROM usuarios WHERE correo='".$correo."'");
 
 				if($res->num_rows > 0)
@@ -53,6 +53,19 @@
 			}
 
 			return $valido;
+		}
+
+		static function getUserByID($id_user) {
+			$mysqli = ControladorBD::conectar();
+			$row = "";
+
+			$res = $mysqli->query("SELECT * FROM usuarios WHERE id_user='". $id_user."'");
+
+			if($res->num_rows > 0) {
+				$row = $res->fetch_assoc();
+			}
+
+			return $row;
 		}
 	}
 

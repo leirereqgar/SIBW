@@ -1,9 +1,9 @@
 <?php
-	require_once("controladorBD.php");
+	require_once("ControladorBD.php");
 
 	class ComentariosBD {
 		static function getComentarios($idEv) {
-			$mysqli = controladorBD::conectar();
+			$mysqli = ControladorBD::conectar();
 
 			$result = array();
 			$indice = 0;

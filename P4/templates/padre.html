@@ -42,8 +42,12 @@
 		<div id=cuerpo>
 			<div id="adicional">
 				<div id="cuentas">
-					{% block cuentas %}
-					{% endblock %}
+					{% if usuario %}
+						<button><a href="">Mi cuenta</a></button>
+					{% else %}
+						<button><a href="iniciarSesion.php">Inicia sesión</a></button>
+						<button><a href="crearCuenta.php">Crear cuenta</a></button>
+					{% endif %}
 				</div>
 			</div>
 

@@ -17,7 +17,7 @@
 
 		if (!empty($id)) {
 			session_start();
-			$_SESSION['id_usuario'] = $id;
+			$_SESSION['id_user'] = $id;
 
 			header("Location: index.php");
 			exit();

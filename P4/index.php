@@ -2,21 +2,21 @@
 	ini_set('display_errors', 1);
 
 	require_once "./vendor/autoload.php";
+	include("controladoresBD/UsuariosBD.php");
 	include("controladoresBD/EventosBD.php");
 
 	$loader = new \Twig\Loader\FilesystemLoader('templates');
 	$twig = new \Twig\Environment($loader);
 
-	$sesion = false;
+	session_start();
 
-	if(!isset($_SESSION)){
-		$sesion = false;
-	}
-	else {
-		$sesion = true;
-	}
+	$usuario = "";
+
+	if(isset($_SESSION['id_user']))
+		$usuario = UsuariosBD::getUserByID($_SESSION['id_user']);
+
 
 	$eventos = EventosBD::getAllEventos();
 
-	echo $twig->render('index.html', ['eventos' => $eventos, 'sesion' => $sesion]);
+	echo $twig->render('index.html', ['eventos' => $eventos, 'usuario' => $usuario]);
 ?>

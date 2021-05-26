@@ -1,13 +1,19 @@
 <?php
-ini_set('display_errors', 1);
+	ini_set('display_errors', 1);
 	require_once "./vendor/autoload.php";
-	include("controladoresBD/EventosBD.php");
-	include("controladoresBD/ComentariosBD.php");
+	require("controladoresBD/UsuariosBD.php");
+	require("controladoresBD/EventosBD.php");
+	require("controladoresBD/ComentariosBD.php");
 
 	$loader = new \Twig\Loader\FilesystemLoader('templates');
 	$twig = new \Twig\Environment($loader);
 
-	$sesion = false;
+	session_start();
+
+	$usuario = "";
+
+	if(isset($_SESSION['id_user']))
+		$usuario = UsuariosBD::getUserByID($_SESSION['id_user']);
 
 	if (isset($_GET['ev'])) {
 		$idEv = $_GET['ev'];
@@ -19,5 +25,6 @@ ini_set('display_errors', 1);
 	$comentarios = ComentariosBD::getComentarios($idEv);
 
 	echo $twig->render('evento.html', ['id_evento' => $idEv, 'evento' => $evento,
-	                                   'comentarios' => $comentarios, 'sesion' => $sesion]);
+	                                   'comentarios' => $comentarios,
+	                                   'usuario' => $usuario]);
 ?>

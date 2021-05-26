@@ -55,20 +55,10 @@
 		</div>
 		{%endfor%}
 
-		<div class="comentario">
-			<h3 id="persona"></h3>
-			<h4 id="fecha"></h4>
-			<p id="texto">
-			</p>
-		</div>
-
-		{% if sesion == true %}
+		{% if usuario %}
 			<div id="formulario_comentarios">
 				<form>
-					<p>
-						Nombre: <input type="text" name="fname" placeholder="Nombre" id="nombre">
-						E-mail: <input type="text" name="email" placeholder="Correo eléctronico" id="correo">
-					</p>
+					<input type="text" name="email" placeholder="Correo eléctronico" id="correo">
 					<textarea name="texto" rows="8" cols="70" placeholder="Escribe tu comentario..." id="contenido"></textarea>
 					<button type="button" id="boton_submit">Enviar</button>
 				</form>
