@@ -55,9 +55,20 @@
 			return $valido;
 		}
 
+		static function actualizarNombre($id_user, $n_nombre) {
+			$mysqli = ControladorBD::conectar();
+
+			$mysqli->query("UPDATE usuarios SET nombre='" . $n_nombre . "' WHERE usuarios.id_user= '" . $id_user . "'");
+		}
+
+		static function actualizarApellidos($id_user, $n_apellidos) {
+			$mysqli = ControladorBD::conectar();
+
+			$mysqli->query("UPDATE usuarios SET nombre='" . $n_apellidos . "' WHERE usuarios.id_user= '" . $id_user . "'");
+		}
+
 		static function actualizarNickname($id_user, $n_nick) {
 			$mysqli = ControladorBD::conectar();
-			print_r("UPDATE usuarios SET nickname='" . $n_nick . "' WHERE usuarios.id_user= '" . $id_user . "'");
 
 			$mysqli->query("UPDATE usuarios SET nickname='" . $n_nick . "' WHERE usuarios.id_user= '" . $id_user . "'");
 		}

@@ -10,6 +10,13 @@
 
 #titulos img {
 	float: right;
+	margin-left: 1em;
+	transition: background .25s;
+	transition-timing-function: linear;
+}
+
+#titulos img:hover {
+	background-color: #AEC6D6;
 }
 
 .imagenes {
