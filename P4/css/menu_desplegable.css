@@ -1,10 +1,9 @@
 #item_menu {
 	float: right;
-	margin-right: 3em;
+	margin-right: 1em;
 }
 
 #boton_abrir {
-	padding: 1px;
 	background-color: transparent;
 	border: none;
 	border-radius: 2px;
@@ -19,7 +18,7 @@
 }
 
 #boton_abrir:hover {
-	background-color: grey;
+	background-color: #AEC6D6;
 }
 
 #contenedor_menu {

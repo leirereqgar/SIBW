@@ -55,6 +55,25 @@
 			return $valido;
 		}
 
+		static function actualizarNickname($id_user, $n_nick) {
+			$mysqli = ControladorBD::conectar();
+			print_r("UPDATE usuarios SET nickname='" . $n_nick . "' WHERE usuarios.id_user= '" . $id_user . "'");
+
+			$mysqli->query("UPDATE usuarios SET nickname='" . $n_nick . "' WHERE usuarios.id_user= '" . $id_user . "'");
+		}
+
+		static function actualizarCorreo($id_user, $n_correo) {
+			$mysqli = ControladorBD::conectar();
+
+			$mysqli->query("UPDATE usuarios SET correo='" . $n_correo . "' WHERE usuarios.id_user= '" . $id_user . "'");
+		}
+
+		static function actualizarPassword($id_user, $n_pass) {
+			$mysqli = ControladorBD::conectar();
+
+			$mysqli->query("UPDATE usuarios SET password='" . $n_pass . "' WHERE usuarios.id_user= '" . $id_user . "'");
+		}
+
 		static function getUserByID($id_user) {
 			$mysqli = ControladorBD::conectar();
 			$row = "";
@@ -66,6 +85,27 @@
 			}
 
 			return $row;
+		}
+
+		static function compararPermisos($permiso, $requerido) {
+			$mayor_igual = false;
+
+			switch ($requerido) {
+				case 'registrado':
+					if(!$mayor_igual)
+						$mayor_igual = $permiso == 'registrado';
+				case 'moderador':
+					if(!$mayor_igual)
+						$mayor_igual = $permiso == 'moderador';
+				case 'gestor':
+					if(!$mayor_igual)
+						$mayor_igual = $permiso == 'gestor';
+				case 'superusuario':
+					if(!$mayor_igual)
+						$mayor_igual = $permiso == 'superusuario';
+			}
+
+			return $mayor_igual;
 		}
 	}
 

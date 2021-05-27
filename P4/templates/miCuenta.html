@@ -1,0 +1,35 @@
+{% extends "padre.html" %}
+	{% block mensaje %}
+		Mi cuenta
+	{% endblock %}
+	{% block stylesheets %}
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/miCuenta.css">
+	{% endblock %}
+
+	{% block items_adicionales %}
+	{% endblock %}
+
+
+	{% block central %}
+	<div id="principal">
+		<div id="info-usuario">
+			<h1><b>{{usuario['nombre']}} {{usuario['apellidos']}}</b></h1>
+			<h3>{{usuario['nickname']}}</h3>
+			<h3>{{usuario['correo']}}</h3>
+		</div>
+		<div id="modificar">
+			<h2><b>Modifica tu cuenta</b></h2>
+			<form action="scriptsPHP/modificarCuenta.php" method="post">
+				<h4>Nuevo nickname:</h4>
+				<input type="text" name="n_nickname" value="">
+				<h4>Nuevo correo:</h4>
+				<input type="text" name="n_correo" value="">
+				<h4>Nueva contraseña:</h4>
+				<input type="password" name="n_password" value="">
+				<br>
+				<button type="submit">Actualizar</button>
+			</form>
+		</div>
+	</div>
+	{% endblock %}

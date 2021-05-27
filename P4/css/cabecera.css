@@ -45,3 +45,25 @@
 .item a:hover {
 	background-color: #AEC6D6;
 }
+
+#lista-menu button {
+	float: right;
+	margin-right: 1em;
+	margin-bottom: 1em;
+	padding: 1px;
+	background-color: transparent;
+	border: none;
+	border-radius: 2px;
+	width: 3em;
+	height: 3em;
+	transition-duration: 0.4s;
+}
+
+#lista-menu button img {
+	width: 2em;
+	height: 2em;
+}
+
+#lista-menu button:hover {
+	background-color: #AEC6D6;
+}
