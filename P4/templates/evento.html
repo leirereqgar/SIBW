@@ -27,7 +27,13 @@
 	{% block central %}
 	<div id="infoEvento">
 		<div id="titulos">
-			<h2>{{ evento ['nombre'] }}<a href="./evento_imprimir.php?ev={{id_evento}}"><img src="../img/imprimir.svg"></a></h2>
+			<h2>{{ evento ['nombre'] }}
+				{% if edicion %}
+					<a href="scriptsPHP/eliminarEvento.php?ev={{id_evento}}"><img src="img/delete.svg"></a>
+					<a href="./editarEvento.php?ev={{id_evento}}"><img src="img/edit.svg"></a>
+				{% endif %}
+				<a href="./evento_imprimir.php?ev={{id_evento}}"><img src="img/imprimir.svg"></a>
+			</h2>
 			<h3>{{ evento ['organizacion'] }}</h3>
 			<h4>{{ evento ['fecha'] }}</h4>
 		</div>
@@ -43,24 +49,30 @@
 	<div id="contenedor_menu">
 		<div id="close">
 			<button type="button" name="boton_dentro_menu" id="boton_cerrar">
-				<img src="../img/close.svg">
+				<img src="img/close.svg">
 			</button>
 		</div>
 
 		{%for i in comentarios%}
 		<div class="comentario">
-			<h3>{{i['nombre']}} {{i['apellidos']}}</h3>
+			<h3>
+				{{i['nombre']}} {{i['apellidos']}}
+				{% if moderador %}
+					<a href="editarComentario.php?ev={{id_evento}}&cm={{i['id_comentario']}}"><img src="img/edit.svg"></a>
+					<a href="scriptsPHP/eliminarComentario.php?ev={{id_evento}}&cm={{i['id_comentario']}}"><img src="img/delete.svg"></a>
+				{% endif %}
+			</h3>
 			<h4>{{i['fecha']}}</h4>
 			<p>{{i['texto_comentario']}}</p>
+			<p><i>{{i['editado']}}</i>
 		</div>
 		{%endfor%}
 
 		{% if usuario %}
 			<div id="formulario_comentarios">
-				<form>
-					<input type="text" name="email" placeholder="Correo eléctronico" id="correo">
-					<textarea name="texto" rows="8" cols="70" placeholder="Escribe tu comentario..." id="contenido"></textarea>
-					<button type="button" id="boton_submit">Enviar</button>
+				<form action="scriptsPHP/nuevoComentario.php?ev={{id_evento}}" method="POST">
+					<textarea name="comentario" rows="8" cols="70" placeholder="Escribe tu comentario..." id="contenido" required></textarea>
+					<button type="submit" id="boton_submit">Enviar</button>
 				</form>
 			</div>
 		{% endif %}

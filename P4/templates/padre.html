@@ -24,17 +24,21 @@
 			<div id="menu">
 				<ul id="lista-menu">
 					<div class="item">
-						<li><a href="index.php">Página principal</a></li>
+						<li><a href="index.php"><img src="img/home.svg"> <br>Página principal</a></li>
 					</div>
 					<div class="item">
-						<li><a href="">Sobre la zona</a></li>
+						<li><a href="https://es.wikipedia.org/wiki/Manchuela_conquense">
+							<img src="img/info.svg"> <br>Sobre la zona
+						</a></li>
 					</div>
 					<div class="item">
-						<li><a href="">Sobre nosotros</a></li>
+						<li><a href="https://github.com/leirereqgar">
+							<img src="img/github.png"><br>Sobre nosotros
+						</a></li>
 					</div>
 					{% if usuario %}
 						<button type="button">
-							<a href="scriptsPHP/logout.php"><img src="../img/logout.svg"></a>
+							<a href="scriptsPHP/logout.php"><img src="img/logout.svg"></a>
 						</button>
 					{% endif %}
 
@@ -48,10 +52,10 @@
 			<div id="adicional">
 				<div id="cuentas">
 					{% if usuario %}
-						<button><a href="miCuenta.php">Mi cuenta</a></button>
+						<button><a href="miCuenta.php"><img src="img/account.svg">Mi cuenta</a></button>
 					{% else %}
-						<button><a href="iniciarSesion.php">Inicia sesión</a></button>
-						<button><a href="crearCuenta.php">Crear cuenta</a></button>
+						<button><a href="iniciarSesion.php"><img src="img/login.svg">Inicia sesión</a></button>
+						<button><a href="crearCuenta.php"><img src="img/new.svg"> Crear cuenta</a></button>
 					{% endif %}
 				</div>
 			</div>

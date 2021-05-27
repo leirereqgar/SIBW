@@ -43,6 +43,19 @@
 			return $result;
 		}
 
+		static function insertarEvento($evento) {
+			$mysqli = ControladorBD::conectar();
+
+			$mysqli -> query("INSERT INTO eventos (nombre, organizacion, fecha, descripcion, logo, imagen1, imagen2)" .
+			                 "VALUES ('" . $evento['nombre'] . "', " .
+			                 "'" . $evento['organizacion'] . "', " .
+			                 "'" . $evento['fecha'] . "', " .
+			                 "'" . $evento['descripcion'] . "', " .
+			                 "'" . $evento['logo'] . "', " .
+			                 "'" . $evento['imagen1'] . "', " .
+			                 "'" . $evento['imagen2'] . "')");
+		}
+
 		static function actualizarEvento($evento) {
 			$mysqli = ControladorBD::conectar();
 

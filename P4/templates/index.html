@@ -13,15 +13,21 @@
 
 	{% block central %}
 	<div id="principal">
-
 		{% for i in eventos %}
-		<div class="evento">
-			<a href="evento.php?ev={{i['id']}}">
-				<img src="{{i['logo']}}">
-			<h3>{{i['nombre']}}</h3>
-			</a>
-		</div>
+			<div class="evento">
+				<a href="evento.php?ev={{i['id']}}">
+					<img src="{{i['logo']}}">
+				<h3>{{i['nombre']}}</h3>
+				</a>
+			</div>
 		{%endfor%}
-
+		{% if edicion %}
+			<div class="evento">
+				<a href="nuevoEvento.php">
+					<img src="img/add.svg">
+				<h3>Nuevo evento</h3>
+				</a>
+			</div>
+		{% endif %}
 	</div>
 	{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "padre.html" %}
+
+	{% block mensaje %}
+		Editar {{ evento ['nombre'] }}
+	{% endblock %}
+
+	{% block stylesheets %}
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/editar_evento.css">
+	{% endblock %}
+
+	{% block scripts %}
+	{% endblock %}
+
+	{% block items_adicionales %}
+	{% endblock %}
+
+	{% block central %}
+	<div id="infoEvento">
+		<form action="editarComentario.php?ev={{id_evento}}&cm={{id_comentario}}" method="post">
+			<h1>{{datos['nombre']}} {{datos['apellidos']}}</h1>
+			<h2>{{datos['fecha']}}</h2>
+			<textarea name="descripcion" rows="10" cols="99" required>{{ datos ['texto_comentario'] }}</textarea>
+			<br>
+			<p><i>{{datos['editado']}}</i></p>
+			<button type="submit" name="button">Actualizar</button>
+		</form>
+	</div>
+
+
+	{% endblock %}

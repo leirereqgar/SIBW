@@ -32,6 +32,10 @@
 	display: inline-block;
 }
 
+.item img {
+	max-width: 20px;
+}
+
 .item a {
 	color: inherit;
 	display: block;

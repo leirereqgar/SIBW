@@ -12,9 +12,13 @@
 
 	$usuario = "";
 	$edicion = false;
+	$moderador = false;
 
 	if(isset($_SESSION['id_user'])){
 		$usuario = UsuariosBD::getUserByID($_SESSION['id_user']);
+
+		if(UsuariosBD::compararPermisos($usuario['tipo'], "moderador"))
+			$moderador = true;
 
 		if(UsuariosBD::compararPermisos($usuario['tipo'], "gestor"))
 			$edicion = true;
@@ -31,5 +35,6 @@
 
 	echo $twig->render('evento.html', ['id_evento' => $idEv, 'evento' => $evento,
 	                                   'comentarios' => $comentarios,
-	                                   'usuario' => $usuario, 'edicion' => $edicion]);
+	                                   'usuario' => $usuario, 'edicion' => $edicion,
+	                                   'moderador' => $moderador]);
 ?>
