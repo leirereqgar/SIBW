@@ -1,0 +1,49 @@
+{% extends "padre.html" %}
+	{% block mensaje %}
+		Mi cuenta
+	{% endblock %}
+	{% block stylesheets %}
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/miCuenta.css">
+	{% endblock %}
+
+	{% block items_adicionales %}
+	{% endblock %}
+
+
+	{% block central %}
+	<div id="principal">
+		<div id="info-usuario">
+			<h1><b>{{usuario['nombre']}} {{usuario['apellidos']}}</b></h1>
+			<h3>{{usuario['nickname']}}</h3>
+			<h3>{{usuario['correo']}}</h3>
+		</div>
+		{% if superusuario %}
+			<div id="modificar">
+				<h2><b>Modifica los permisos</b></h2>
+				<form action="scriptsPHP/modificarPermisos.php?usr={{usuario['id_user']}}" method="post">
+					Registrado
+					<input type="radio" name="permiso" value="registrado"
+						{% if usuario['tipo'] == "registrado" %}
+							checked="checked"
+						{% endif %}
+					>
+					Moderador
+					<input type="radio" name="permiso" value="moderador"
+						{% if usuario['tipo'] == "moderador" %}
+							checked="checked"
+						{% endif %}
+					>
+					Gestor
+					<input type="radio" name="permiso" value="gestor"
+						{% if usuario['tipo'] == "gestor" %}
+							checked="checked"
+						{% endif %}
+					>
+					<br>
+					<button type="submit">Actualizar</button>
+				</form>
+			</div>
+		{% endif %}
+	</div>
+	{% endblock %}

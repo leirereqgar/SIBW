@@ -55,13 +55,14 @@
 
 		{%for i in comentarios%}
 		<div class="comentario">
-			<h3>
+			<h2>
 				{{i['nombre']}} {{i['apellidos']}}
 				{% if moderador %}
 					<a href="editarComentario.php?ev={{id_evento}}&cm={{i['id_comentario']}}"><img src="img/edit.svg"></a>
 					<a href="scriptsPHP/eliminarComentario.php?ev={{id_evento}}&cm={{i['id_comentario']}}"><img src="img/delete.svg"></a>
 				{% endif %}
-			</h3>
+			</h2>
+			<h3><a href="otraCuenta.php?usr={{i['id_usuario']}}">{{i['nickname']}}</a></h3>
 			<h4>{{i['fecha']}}</h4>
 			<p>{{i['texto_comentario']}}</p>
 			<p><i>{{i['editado']}}</i>

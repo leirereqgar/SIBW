@@ -28,7 +28,7 @@
 		$valores['correo_valido'] = UsuariosBD::verificarCorreo($valores['correo']);
 
 		if($valores['correo_valido'])
-			UsuariosBD::actualizarNickname($usuario['id_user'], $valores['correo']);
+			UsuariosBD::actualizarCorreo($usuario['id_user'], $valores['correo']);
 	}
 
 	if(!empty($_POST['password']))

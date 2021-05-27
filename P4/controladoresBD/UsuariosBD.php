@@ -64,7 +64,7 @@
 		static function actualizarApellidos($id_user, $n_apellidos) {
 			$mysqli = ControladorBD::conectar();
 
-			$mysqli->query("UPDATE usuarios SET nombre='" . $n_apellidos . "' WHERE usuarios.id_user= '" . $id_user . "'");
+			$mysqli->query("UPDATE usuarios SET apellidos='" . $n_apellidos . "' WHERE usuarios.id_user= '" . $id_user . "'");
 		}
 
 		static function actualizarNickname($id_user, $n_nick) {
@@ -83,6 +83,12 @@
 			$mysqli = ControladorBD::conectar();
 
 			$mysqli->query("UPDATE usuarios SET password='" . $n_pass . "' WHERE usuarios.id_user= '" . $id_user . "'");
+		}
+
+		static function actualizarPermisos($usuario, $permiso) {
+			$mysqli = ControladorBD::conectar();
+
+			$mysqli->query("UPDATE usuarios SET tipo='" . $permiso . "' WHERE usuarios.id_user= '" . $usuario . "'");
 		}
 
 		static function getUserByID($id_user) {
