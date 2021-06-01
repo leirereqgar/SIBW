@@ -7,14 +7,25 @@
 	grid-template-columns: 50% 50%;
 }
 
-#info-usuario h1 {
-	padding-top: 10px;
-	padding-left: 20px;
+#buscar {
+	margin-left: 50px;
+	display: flex;
+	align-items: center;
 }
 
-#info-usuario h3 {
-	padding-top: 10px;
-	padding-left: 30px;
+#buscar button {
+	background-color: #ECEED3;
+	border: none;
+	padding: 10px;
+	margin: 5px;
+	display: inline-block;
+	font-size: 16px;
+	font-family: 'Source Sans Pro', sans-serif;
+	transition-duration: 0.4s;
+}
+
+#buscar button:hover {
+	background-color: #AEC6D6;
 }
 
 #permisos {
@@ -42,11 +53,10 @@
 #modificar{
 	margin-top: 2em;
 	margin-bottom: 2em;
-	margin-left:  5em;
 	padding: 2em;
 	background-color: #ECEED3;
 	border-radius: .5em;
-	width: 400px;
+	width: 500px;
 }
 
 #modificar button {

@@ -13,6 +13,10 @@
 		$usuario = UsuariosBD::getUserByID($_SESSION['id_user']);
 	}
 
+	$superusuario = false;
+	if(UsuariosBD::compararPermisos($usuario['tipo'], 'superusuario'))
+		$superusuario = true;
 
-	echo $twig->render('miCuenta.html', ['usuario' => $usuario]);
+
+	echo $twig->render('miCuenta.html', ['usuario' => $usuario, 'superusuario' => $superusuario]);
 ?>

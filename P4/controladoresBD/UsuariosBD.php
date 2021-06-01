@@ -104,23 +104,41 @@
 			return $row;
 		}
 
+		static function getAllUsers() {
+			$mysqli = ControladorBD::conectar();
+
+			$result = array();
+			$indice = 0;
+			foreach($mysqli->query("SELECT * FROM usuarios") as $row) {
+				$result[$indice] = $row;
+				$indice++;
+			}
+
+			return $result;
+		}
+
 		static function compararPermisos($permiso, $requerido) {
 			$mayor_igual = false;
 
-			switch ($requerido) {
-				case 'registrado':
-					if(!$mayor_igual)
-						$mayor_igual = $permiso == 'registrado';
-				case 'moderador':
-					if(!$mayor_igual)
-						$mayor_igual = $permiso == 'moderador';
-				case 'gestor':
-					if(!$mayor_igual)
-						$mayor_igual = $permiso == 'gestor';
-				case 'superusuario':
-					if(!$mayor_igual)
-						$mayor_igual = $permiso == 'superusuario';
+			if($requerido == 'registrado') {
+				if ($permiso == 'registrado' || $permiso == 'moderador'
+				|| $permiso == 'gestor' || $permiso == 'superusuario')
+					$mayor_igual = true;
 			}
+			elseif($requerido == 'moderador') {
+				if ($permiso == 'moderador' || $permiso == 'gestor'
+				|| $permiso == 'superusuario')
+					$mayor_igual = true;
+			}
+			elseif($requerido == 'gestor') {
+				if ($permiso == 'gestor' || $permiso == 'superusuario')
+					$mayor_igual = true;
+			}
+			elseif($requerido == 'superusuario') {
+				if ($permiso == 'superusuario')
+					$mayor_igual = true;
+			}
+
 
 			return $mayor_igual;
 		}

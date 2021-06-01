@@ -18,6 +18,15 @@
 			<h3>{{usuario['nickname']}}</h3>
 			<h3>{{usuario['correo']}}</h3>
 		</div>
+
+
+		<div id="permisos">
+			{% if superusuario %}
+				<button type="button" name="button"><a href="permisos.php">Gestionar Permisos</a></button>
+			{% endif %}
+		</div>
+
+
 		<div id="modificar">
 			<h2><b>Modifica tu cuenta</b></h2>
 			<form action="scriptsPHP/modificarCuenta.php" method="post">

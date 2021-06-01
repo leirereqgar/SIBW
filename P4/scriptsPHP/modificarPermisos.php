@@ -9,7 +9,7 @@
 		$usuario = UsuariosBD::getUserByID($_GET['usr']);
 		UsuariosBD::actualizarPermisos($usuario['id_user'], $_POST['permiso']);
 
-		header("Location: ../otraCuenta.php?usr=".$usuario['id_user']);
+		header("Location: ../permisos.php");
 	}
 
 ?>
