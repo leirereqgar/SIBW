@@ -1,0 +1,41 @@
+{% extends "padre.html" %}
+
+	{% block mensaje %}
+		Editar {{ evento ['nombre'] }}
+	{% endblock %}
+
+	{% block stylesheets %}
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/editar_evento.css">
+	{% endblock %}
+
+	{% block scripts %}
+	{% endblock %}
+
+	{% block items_adicionales %}
+	{% endblock %}
+
+	{% block central %}
+	<div id="infoEvento">
+		<form action="nuevoEvento.php" method="post">
+			<h3>Nombre:</h3>
+			<input type="text" name="nombre" value="Nombre evento" required>
+			<h3>Organizador:</h3>
+			<input type="text" name="organizador" value="Organización del evento" required>
+			<h3>Fecha:</h3>
+			<input type="date" name="fecha" value="AAAA-MM-DD" required>
+			<h3>Logo:</h3>
+			<input type="text" name="logo" value="Enlace al logo" required>
+			<h3>Imagen 1:</h3>
+			<input type="text" name="imagen1" value="Enlace imagen 1" required>
+			<h3>Imagen 2:</h3>
+			<input type="text" name="imagen2" value="Enlace imagen 2" required>
+			<h3>Descripción: </h3>
+			<textarea name="descripcion" rows="10" cols="99" required>Descripcion para el evento</textarea>
+			<br>
+			<button type="submit" name="button">Añadir</button>
+		</form>
+	</div>
+
+
+	{% endblock %}

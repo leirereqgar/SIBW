@@ -1,0 +1,81 @@
+{% extends "padre.html" %}
+
+	{% block mensaje %}
+		{{ evento ['nombre'] }}
+	{% endblock %}
+
+	{% block stylesheets %}
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/p_evento.css">
+	<link rel="stylesheet" href="css/menu_desplegable.css">
+	{% endblock %}
+
+	{% block scripts %}
+	<!--Script de javascript-->
+	<script src="JavaScript/menu_desplegable.js" defer></script>
+	<script src="JavaScript/comentarios.js" defer></script>
+	{% endblock %}
+
+	{% block items_adicionales %}
+	<div id="item_menu">
+		<button type="button" name="boton_menu" id="boton_abrir">
+			<img src="../img/menu.svg">
+		</button>
+	</div>
+	{% endblock %}
+
+	{% block central %}
+	<div id="infoEvento">
+		<div id="titulos">
+			<h2>{{ evento ['nombre'] }}
+				{% if edicion %}
+					<a href="scriptsPHP/eliminarEvento.php?ev={{id_evento}}"><img src="img/delete.svg"></a>
+					<a href="./editarEvento.php?ev={{id_evento}}"><img src="img/edit.svg"></a>
+				{% endif %}
+				<a href="./evento_imprimir.php?ev={{id_evento}}"><img src="img/imprimir.svg"></a>
+			</h2>
+			<h3>{{ evento ['organizacion'] }}</h3>
+			<h4>{{ evento ['fecha'] }}</h4>
+		</div>
+		<div id="descripcion">
+			<div class="imagenes">
+				<img src="{{evento['imagen1']}}" id="espuma"><br>
+				<img src="{{evento['imagen2']}}" id="plaza">
+			</div>
+			<p>{{ evento ['descripcion'] }}</p>
+		</div>
+	</div>
+
+	<div id="contenedor_menu">
+		<div id="close">
+			<button type="button" name="boton_dentro_menu" id="boton_cerrar">
+				<img src="img/close.svg">
+			</button>
+		</div>
+
+		{%for i in comentarios%}
+		<div class="comentario">
+			<h2>
+				{{i['nombre']}} {{i['apellidos']}}
+				{% if moderador %}
+					<a href="editarComentario.php?ev={{id_evento}}&cm={{i['id_comentario']}}"><img src="img/edit.svg"></a>
+					<a href="scriptsPHP/eliminarComentario.php?ev={{id_evento}}&cm={{i['id_comentario']}}"><img src="img/delete.svg"></a>
+				{% endif %}
+			</h2>
+			<h3>{{i['nickname']}}</h3>
+			<h4>{{i['fecha']}}</h4>
+			<p>{{i['texto_comentario']}}</p>
+			<p><i>{{i['editado']}}</i>
+		</div>
+		{%endfor%}
+
+		{% if usuario %}
+			<div id="formulario_comentarios">
+				<form action="scriptsPHP/nuevoComentario.php?ev={{id_evento}}" method="POST">
+					<textarea name="comentario" rows="8" cols="70" placeholder="Escribe tu comentario..." id="contenido" required></textarea>
+					<button type="submit" id="boton_submit">Enviar</button>
+				</form>
+			</div>
+		{% endif %}
+	</div>
+	{% endblock %}

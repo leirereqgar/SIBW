@@ -1,0 +1,75 @@
+#principal {
+	background-color: #C8D9E4;
+	float: right;
+	margin: 1em;
+	border-radius: 1em;
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
+#buscar {
+	margin-left: 50px;
+	display: flex;
+	align-items: center;
+}
+
+#buscar button {
+	background-color: #ECEED3;
+	border: none;
+	padding: 10px;
+	margin: 5px;
+	display: inline-block;
+	font-size: 16px;
+	font-family: 'Source Sans Pro', sans-serif;
+	transition-duration: 0.4s;
+}
+
+#buscar button:hover {
+	background-color: #AEC6D6;
+}
+
+#permisos {
+	display: flex;
+	align-items: center;
+}
+
+#permisos button {
+	background-color: #ECEED3;
+	border: none;
+	padding: 10px;
+	margin: 5px;
+	display: inline-block;
+	transition-duration: 0.4s;
+}
+
+#permisos button:hover {
+	background-color: #AEC6D6;
+}
+
+#permisos button a {
+	text-decoration: none;
+}
+
+#modificar{
+	margin-top: 2em;
+	margin-bottom: 2em;
+	padding: 2em;
+	background-color: #ECEED3;
+	border-radius: .5em;
+	width: 500px;
+}
+
+#modificar button {
+	margin-top: 1em;
+	padding: 0.5em;
+	background-color: #AEC6D6;
+	border: none;
+	display: inline-block;
+	font-size: 16px;
+	font-family: 'Source Sans Pro', sans-serif;
+	transition-duration: 0.4s;
+}
+
+#modificar button:hover {
+	background-color: #ECEED3;
+}

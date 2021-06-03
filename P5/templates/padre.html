@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>albedr.io: {% block mensaje %}{% endblock %}</title>
+		<link rel="stylesheet" href="css/cabecera.css">
+		{% block stylesheets %}
+		{% endblock %}
+
+		<script type="module" src="JavaScript/busqueda.js" defer></script>
+		{% block scripts %}
+		{% endblock %}
+
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+
+		<link rel="icon" href="img/favicon.png">
+	</head>
+
+	<body>
+		<div id="cabecera">
+			<div class="logo">
+				<img src="img/logo.png" id="imagenlogo">
+			</div>
+			<div id="menu">
+				<ul id="lista-menu">
+					<div class="item">
+						<li><a href="index.php"><img src="img/home.svg"> <br>Página principal</a></li>
+					</div>
+					<div class="item">
+						<li><a href="https://es.wikipedia.org/wiki/Manchuela_conquense">
+							<img src="img/info.svg"> <br>Sobre la zona
+						</a></li>
+					</div>
+					<div class="item">
+						<li><a href="https://github.com/leirereqgar">
+							<img src="img/github.png"><br>Sobre nosotros
+						</a></li>
+					</div>
+					{% if usuario %}
+						<button type="button">
+							<a href="scriptsPHP/logout.php"><img src="img/logout.svg"></a>
+						</button>
+					{% endif %}
+
+					{% block items_adicionales %}
+					{% endblock %}
+				</ul>
+			</div>
+		</div>
+
+		<div id=cuerpo>
+			<div id="adicional">
+				<div id="cuentas">
+					{% if usuario %}
+						<button><a href="miCuenta.php"><img src="img/account.svg">Mi cuenta</a></button>
+					{% else %}
+						<button><a href="iniciarSesion.php"><img src="img/login.svg">Inicia sesión</a></button>
+						<button><a href="crearCuenta.php"><img src="img/new.svg"> Crear cuenta</a></button>
+					{% endif %}
+
+					<input id="barra-busqueda" type="text" placeholder="Buscar...">
+					<div id="resultados"></div>
+				</div>
+			</div>
+
+
+			{% block central %}
+			<div id="principal">
+			<p>Parte central de la plantilla</p>
+			</div>
+			{% endblock %}
+
+		</div>
+
+		<div id="pie">
+			<p>&copy; Leire Requena Garcia</p>
+		</div>
+	</body>
+</html>

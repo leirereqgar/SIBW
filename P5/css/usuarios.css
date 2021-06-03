@@ -1,0 +1,36 @@
+body {
+	color: black;
+	font-family: 'Source Sans Pro', sans-serif;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#formulario{
+	background-color: #AEC6D6;
+	border: 1px solid black;
+	border-radius: 1em;
+
+	position: relative;
+	max-width: 100%;
+	display: grid;
+	margin: 40px;
+	grid-auto-flow: dense;
+	grid-gap: 10px;
+}
+
+form {
+	/* Centrar el formulario en la página */
+	margin: 0 auto;
+	width: 400px;
+	/* Esquema del formulario */
+	padding: 1em;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+form input {
+
+}

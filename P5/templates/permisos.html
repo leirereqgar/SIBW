@@ -1,0 +1,69 @@
+{% extends "padre.html" %}
+	{% block mensaje %}
+		Gestionar permisos
+	{% endblock %}
+	{% block stylesheets %}
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/permisos.css">
+	{% endblock %}
+
+	{% block items_adicionales %}
+	{% endblock %}
+
+
+	{% block central %}
+	<div id="principal">
+		<div id="buscar">
+			<form action="permisos.php" method="post" required>
+				<select name="droplist">
+					<option value="por defecto">Seleccione un usuario</option>
+
+					{% for i in usuarios %}
+						{% if i['id_user'] != usuario['id_user'] %}
+							<option  value="{{i['id_user']}}">{{i['nickname']}}</option>
+						{% endif %}
+					{% endfor %}
+				</select>
+
+				<button type="submit" name="buscar">Buscar</button>
+			</form>
+		</div>
+
+		{% if usuario_modificar %}
+			<div id="modificar">
+				<h3>{{usuario_modificar['nombre']}} {{usuario_modificar['apellidos']}}</h3>
+				<h3>{{usuario_modificar['nickname']}}</h3>
+				<br>
+				<h4><b>Modifica los permisos</b></h4>
+				<form action="scriptsPHP/modificarPermisos.php?usr={{usuario_modificar['id_user']}}" method="post">
+					Registrado
+					<input type="radio" name="permiso" value="registrado"
+						{% if usuario_modificar['tipo'] == "registrado" %}
+							checked="checked"
+						{% endif %}
+					>
+					Moderador
+					<input type="radio" name="permiso" value="moderador"
+						{% if usuario_modificar['tipo'] == "moderador" %}
+							checked="checked"
+						{% endif %}
+					>
+					Gestor
+					<input type="radio" name="permiso" value="gestor"
+						{% if usuario_modificar['tipo'] == "gestor" %}
+							checked="checked"
+						{% endif %}
+					>
+					Superusuario
+					<input type="radio" name="permiso" value="superusuario"
+						{% if usuario_modificar['tipo'] == "superusuario" %}
+							checked="checked"
+						{% endif %}
+					>
+					<br>
+					<button type="submit">Actualizar</button>
+				</form>
+			</div>
+		{% endif %}
+	</div>
+	{% endblock %}
