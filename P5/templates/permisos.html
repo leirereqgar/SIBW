@@ -36,30 +36,30 @@
 				<br>
 				<h4><b>Modifica los permisos</b></h4>
 				<form action="scriptsPHP/modificarPermisos.php?usr={{usuario_modificar['id_user']}}" method="post">
-					Registrado
 					<input type="radio" name="permiso" value="registrado"
 						{% if usuario_modificar['tipo'] == "registrado" %}
 							checked="checked"
 						{% endif %}
 					>
-					Moderador
+					Registrado
 					<input type="radio" name="permiso" value="moderador"
 						{% if usuario_modificar['tipo'] == "moderador" %}
 							checked="checked"
 						{% endif %}
 					>
-					Gestor
+					Moderador
 					<input type="radio" name="permiso" value="gestor"
 						{% if usuario_modificar['tipo'] == "gestor" %}
 							checked="checked"
 						{% endif %}
 					>
-					Superusuario
+					Gestor
 					<input type="radio" name="permiso" value="superusuario"
 						{% if usuario_modificar['tipo'] == "superusuario" %}
 							checked="checked"
 						{% endif %}
 					>
+					Superusuario
 					<br>
 					<button type="submit">Actualizar</button>
 				</form>

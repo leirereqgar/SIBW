@@ -27,12 +27,18 @@
 				$usado = true;
 
 				$evento['nombre'] = $_POST['nombre'];
-				$evento['organizacion'] = $_POST['organizacion'];
+				$evento['organizacion'] = $_POST['organizador'];
 				$evento['fecha'] = $_POST['fecha'];
 				$evento['descripcion'] = $_POST['descripcion'];
 				$evento['logo'] = $_POST['logo'];
 				$evento['imagen1'] = $_POST['imagen1'];
 				$evento['imagen2'] = $_POST['imagen2'];
+
+				$evento['publicado'] = $_POST['publicado'];
+				if (empty($evento['publicado']))
+					$evento['publicado'] = 0;
+				else
+					$evento['publicado'] = 1;
 
 				EventosBD::actualizarEvento($evento);
 

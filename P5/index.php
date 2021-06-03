@@ -21,7 +21,7 @@
 	}
 
 
-	$eventos = EventosBD::getAllEventos();
+	$eventos = EventosBD::getAllEventos($edicion);
 
 	echo $twig->render('index.html', ['eventos' => $eventos, 'usuario' => $usuario, 'edicion' => $edicion]);
 ?>

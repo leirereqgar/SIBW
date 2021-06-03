@@ -33,6 +33,13 @@
 			<h3>Descripción: </h3>
 			<textarea name="descripcion" rows="10" cols="99" required>{{ evento ['descripcion'] }}</textarea>
 			<br>
+			<h3>Publicado:</h3>
+			<input type="checkbox" id="publicado" name="publicado" value="publicado"
+				{% if evento['publicado'] %}
+					checked
+				{% endif %}
+			>
+			<br>
 			<button type="submit" name="button">Actualizar</button>
 		</form>
 	</div>

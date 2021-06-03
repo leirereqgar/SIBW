@@ -16,8 +16,19 @@ $(() =>
 
 				success: (data) =>
 				{
-					console.log(data);
-					$('#barra-busqueda').html(data).show();
+					const json = JSON.parse(data);
+					const results = $('#resultados').html('');
+
+					for (let i = 0; i < json.length; i++)
+					{
+						const link = document.createElement('a');
+						const br   = document.createElement('br');
+
+						link.href      = 'evento.php?ev=' + json[i].id;
+						link.innerHTML = json[i].nombre;
+
+						results.append(link).append(br).show();
+					}
 				}
 			});
 		}

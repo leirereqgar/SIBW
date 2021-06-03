@@ -26,7 +26,7 @@
 
 			$evento = array('nombre' => 'XXX', 'organizacion' => 'YYY',
 			                'fecha'  => 'XXXX-XX-XX', 'descripcion' => 'Por defecto',
-			                'logo' => 'nop', 'imagen1' => 'nop', 'imagen2' => 'nop');
+			                'logo' => 'nop', 'imagen1' => 'nop', 'imagen2' => 'nop', 'publicado' => 0);
 
 
 			if(is_numeric($idEv)){
@@ -42,18 +42,25 @@
 					                'descripcion' => $row['descripcion'],
 					                'logo' => $row['logo'],
 					                'imagen1' => $row['imagen1'],
-					                'imagen2' => $row['imagen2']);
+					                'imagen2' => $row['imagen2'],
+					                'publicado' => $row['publicado']);
 				}
 			}
 			return $evento;
 		}
 
-		static function getAllEventos() {
+		static function getAllEventos($edicion) {
 			$mysqli = ControladorBD::conectar();
 
 			$result = array();
 			$indice = 0;
-			foreach ($mysqli->query("SELECT id, nombre, logo FROM eventos") as $row) {
+
+			$query = "SELECT id, nombre, logo FROM eventos";
+
+			if (!$edicion)
+				$query .= " WHERE publicado = true";
+
+			foreach ($mysqli->query($query) as $row) {
 				$result[$indice] = $row;
 				$indice++;
 			}
@@ -84,7 +91,8 @@
 			                 "descripcion = '" . $evento['descripcion'] . "', " .
 			                 "logo = '" . $evento['logo'] . "', " .
 			                 "imagen1 = '" . $evento['imagen1'] . "', " .
-			                 "imagen2 = '" . $evento['imagen2'] . "' " .
+			                 "imagen2 = '" . $evento['imagen2'] . "', " .
+								  "publicado = '" . $evento['publicado'] . "' " .
 			                 "WHERE eventos.id='" . $evento['id'] . "'");
 		}
 
